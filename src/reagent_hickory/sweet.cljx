@@ -1,14 +1,13 @@
 (ns reagent-hickory.sweet
-  #+clj (:require [reagent-hickory.templates :refer [deftemplate]])
-  #+cljs (:require-macros [reagent-hickory.templates :refer [deftemplate]])
   (:require [clojure.string :as s]
+
             [clojure.walk :as w]
             [hickory.core :as hc]))
 
 (defn string->tokens
   "Takes a string with syles and parses it into properties and value tokens"
   [style]
-  {:pre [(string? style)]
+  {:pre  [(string? style)]
    :post [(even? (count %))]}
   (->> (s/split style #";")
        (mapcat #(s/split % #":"))
@@ -18,7 +17,7 @@
   "Takes a seq of tokens with the properties (even) and their values (odd)
    and returns a map of {properties values}"
   [tokens]
-  {:pre [(even? (count tokens))]
+  {:pre  [(even? (count tokens))]
    :post [(map? %)]}
   (zipmap (keep-indexed #(if (even? %1) %2) tokens)
           (keep-indexed #(if (odd? %1) %2) tokens)))
@@ -29,6 +28,7 @@
   (tokens->map (string->tokens style)))
 
 (defn filter-angular
+  "Remove ng-* angular tags from hiccup data structure"
   [attrs]
   (->> attrs
        (filter (fn [[key _]]

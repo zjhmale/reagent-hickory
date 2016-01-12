@@ -3,13 +3,18 @@
   :url "https://github.com/zjhmale/reagent-hickory"
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [com.keminglabs/cljx "0.6.0"]
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [org.clojure/clojurescript "0.0-2227"]
                  [hickory "0.6.0"]]
   :source-paths ["src" "target/generated-src"]
   :test-paths ["target/generated-test"]
   :aliases {"cleantest" ["do" "clean," "cljx" "once," "test,"
-                         "cljsbuild" "once," "cljsbuild" "test"]}
+                         "cljsbuild" "once," "cljsbuild" "test"]
+            "deploy"    ["do" "clean," "cljx" "once," "deploy" "clojars"]}
+  :profiles {:dev {:dependencies [[com.cemerick/clojurescript.test "0.3.3"]
+                                  [com.keminglabs/cljx "0.6.0"]]
+                   :plugins      [[lein-cljsbuild "1.0.3"]
+                                  [com.keminglabs/cljx "0.6.0"]]}}
   :cljx {:builds [{:source-paths ["src"]
                    :output-path  "target/generated-src"
                    :rules        :clj}
