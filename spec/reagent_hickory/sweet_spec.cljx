@@ -7,7 +7,5 @@
 (describe "test html -> hiccup"
   (it "html -> hiccup"
       (should= [:p {:class "someclass"} [:span {} "I have "] [:strong {} "bold"] [:span {:style {"color" "red"}} " and red "] [:span {} "text."]]
-               (html->hiccup "<p class=\"someclass\"><span>I have </span><strong>bold</strong><span style=\"color:red;\"> and red </span><span>text.</span></p>")))
-  (it "fails. Fix it!"
-      (should= 0 0)))
+               (html->hiccup "<p class=\"someclass\"><span>I have </span><strong>bold</strong><span style=\"color:red;\"> and red </span><span>text.</span></p>"))))
 
