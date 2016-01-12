@@ -1,6 +1,6 @@
 # reagent-hickory
 
-FIXME: description
+an enhancement of using hickory to generate reagent style hiccup
 
 ## Installation
 
@@ -12,25 +12,8 @@ FIXME: explanation
 
     $ java -jar reagent-hickory-0.1.0-standalone.jar [args]
 
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
 ## License
 
-Copyright © 2016 FIXME
+Copyright © 2016 zjhmale
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the Eclipse Public License, the same as Clojure.
