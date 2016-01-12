@@ -14,8 +14,7 @@
             [lein-cljsbuild "1.0.5"]
             [com.keminglabs/cljx "0.6.0"]]
 
-  :cljsbuild {:builds        {:dev {:source-paths   ["target/generated/src/cljs"
-                                                     "target/generated/spec/cljs"]
+  :cljsbuild {:builds        {:dev {:source-paths   ["target/generated/spec/cljs"]
                                     :compiler       {:output-to     "target/testable.js"
                                                      :optimizations :whitespace
                                                      :pretty-print  true}
