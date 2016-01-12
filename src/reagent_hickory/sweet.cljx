@@ -1,8 +1,8 @@
 (ns reagent-hickory.sweet
   (:require [clojure.string :as s]
-
             [clojure.walk :as w]
-            [hickory.core :as hc]))
+            [hickory.core :as hc]
+            #+cljs [goog.string :as gstring]))
 
 (defn string->tokens
   "Takes a string with syles and parses it into properties and value tokens"
@@ -27,12 +27,22 @@
   [style]
   (tokens->map (string->tokens style)))
 
+#+clj
 (defn filter-angular
   "Remove ng-* angular tags from hiccup data structure"
   [attrs]
   (->> attrs
        (filter (fn [[key _]]
                  (not (.startsWith (name key) "ng-"))))
+       (into {})))
+
+#+cljs
+(defn filter-angular
+  "Remove ng-* angular tags from hiccup data structure"
+  [attrs]
+  (->> attrs
+       (filter (fn [[key _]]
+                 (not (gstring/startsWith (name key) "ng-"))))
        (into {})))
 
 (defn hiccup->sablono
