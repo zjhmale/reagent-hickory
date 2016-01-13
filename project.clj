@@ -40,4 +40,5 @@
   :aliases {"pre-compile" ["do" "clean," "cljx"]
             "clj-test"    ["spec"]
             "cljs-test"   ["cljsbuild" "test"]
-            "run-tests"   ["do" "pre-compile," "clj-test," "cljs-test"]})
+            "run-tests"   ["do" "pre-compile," "clj-test," "cljs-test"]
+            "deploy"      ["do" "clean," "cljx" "once," "deploy" "clojars"]})
