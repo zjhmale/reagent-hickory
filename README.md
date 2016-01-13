@@ -6,7 +6,7 @@ an enhancement of using hickory to generate reagent style hiccup
 
 ## Installation
 
-[![Clojars Project](https://img.shields.io/clojars/v/zjhmale/reagent-hickory.svg)](https://clojars.org/zjhmale/reagent-hickory)
+[![Clojars Project](http://clojars.org/zjhmale/reagent-hickory/latest-version.svg)](https://clojars.org/zjhmale/reagent-hickory)
 
 ## Usage
 
