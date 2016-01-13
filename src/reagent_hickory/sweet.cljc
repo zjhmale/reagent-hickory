@@ -41,13 +41,20 @@
   [coll]
   (w/postwalk
     (fn [x]
-      (if (map? x)
-        (filter-angular
-          (if (contains? x :style)
-            (update-in x [:style] style->map)
-            x))
+      (if (vector? x)
+        (filterv identity x)
         x))
-    coll))
+    (w/postwalk
+      (fn [x]
+        (when-not (and (string? x)
+                       (re-matches #"\s+" x))
+          (if (map? x)
+            (filter-angular
+              (if (contains? x :style)
+                (update-in x [:style] style->map)
+                x))
+            x)))
+      coll)))
 
 (defn html->hiccup
   "translate html to hiccup captible with reagent"
