@@ -1,0 +1,26 @@
+<div id="navbar">
+    <ul>
+        <li ng-class="{selected: pathEquals('/')}">
+            <a href="/">dashboard</a>
+        </li>
+        <li ng-class="{selected: pathEquals('/robot')}" ng-switch="onStage">
+            <a ng-switch-when="true" class="muted">robot (stage禁用)</a>
+            <a ng-switch-when="false" href="/robot">robot</a>
+        </li>
+        <li ng-class="{selected: pathEquals('/feedbacks')}">
+            <a href="/feedbacks">feedbacks</a>
+        </li>
+        <li ng-class="{selected: pathEquals('/teams')}">
+            <a href="/teams">teams</a>
+        </li>
+        <li ng-class="{selected: pathEquals('/human_assistant')}">
+            <a href="/human_assistant">human assistant</a>
+        </li>
+        <li ng-class="{selected: pathEquals('/features')}">
+            <a href="/features">features</a>
+        </li>
+        <li ng-class="{selected: pathEquals('/refresh')}">
+            <a href="/refresh">refresh</a>
+        </li>
+    </ul>
+</div>
