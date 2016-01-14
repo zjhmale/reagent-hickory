@@ -47,7 +47,9 @@
     (w/postwalk
       (fn [x]
         (when-not (and (string? x)
-                       (re-matches #"\s+" x))
+                       (or (re-matches #"\s+" x)
+                           #?(:clj  (.startsWith x "<!--")
+                              :cljs (gstring/startsWith x "<!--"))))
           (if (map? x)
             (filter-angular
               (if (contains? x :style)
