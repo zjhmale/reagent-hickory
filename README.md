@@ -4,6 +4,9 @@
 
 an enhancement of using hickory to generate reagent style hiccup
 
+* ignore angular property
+* ignore html comments
+
 ## Installation
 
 [![Clojars Project](http://clojars.org/zjhmale/reagent-hickory/latest-version.svg)](https://clojars.org/zjhmale/reagent-hickory)
@@ -30,6 +33,14 @@ put you html file in `resources/public/templates/`
 user=> (deftemplate component "component.html") ;;#'component can put in any reagent capatible hiccup structure
 user=> component
 [:p {:class "someclass"} [:span {} "I have "] [:strong {} "bold"] [:span {:style {"color" "red"}} " and red "] [:span {} "text."]]
+```
+
+## Test
+
+[Phantomjs](http://phantomjs.org/) 2.0.0 or above installed required
+
+```
+lein run-tests
 ```
 
 ## License
