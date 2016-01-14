@@ -27,7 +27,7 @@ user=> (html->hiccup "<p class='someclass'><span>I have </span><strong>bold</str
 
 * convert from html file
 
-put you html file in `resources/public/templates/`
+put you html file in `src/templates/`
 
 ```clojure
 user=> (deftemplate component "component.html") ;;#'component can put in any reagent capatible hiccup structure

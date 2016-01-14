@@ -3,6 +3,6 @@
 
 (defmacro deftemplate
   [symbol-name html-name]
-  (let [content (slurp (str "resources/public/templates/" html-name))]
+  (let [content (slurp (str "src/templates/" html-name))]
     `(def ~symbol-name
        ~(html->hiccup content))))
