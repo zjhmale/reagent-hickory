@@ -6,12 +6,12 @@
 
   :dependencies [[org.clojure/clojure "1.7.0"]
                  [hickory "0.6.0"]
-                 [org.clojure/clojurescript "0.0-3308"]
+                 [org.clojure/clojurescript "1.7.170"]
                  [speclj "3.3.1"]
                  [com.keminglabs/cljx "0.6.0"]]
 
   :plugins [[speclj "3.3.1"]
-            [lein-cljsbuild "1.0.5"]
+            [lein-cljsbuild "1.1.1"]
             [com.keminglabs/cljx "0.6.0"]]
 
   :cljsbuild {:builds        {:dev {:source-paths   ["target/generated/spec/cljs"]
