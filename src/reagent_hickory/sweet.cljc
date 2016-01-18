@@ -61,4 +61,4 @@
 (defn html->hiccup
   "translate html to hiccup captible with reagent"
   [html]
-  (hiccup->sablono (first (map hc/as-hiccup (hc/parse-fragment html)))))
+  (first (filter identity (map hiccup->sablono (map hc/as-hiccup (hc/parse-fragment html))))))
