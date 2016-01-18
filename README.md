@@ -6,6 +6,7 @@ an enhancement of using hickory to generate reagent style hiccup
 
 * ignore angular property
 * ignore html comments
+* should just put one html component each template file
 
 ## Installation
 
