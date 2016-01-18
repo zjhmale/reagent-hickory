@@ -1,4 +1,4 @@
-(defproject zjhmale/reagent-hickory "0.3.2"
+(defproject zjhmale/reagent-hickory "0.3.3"
   :description "an enhancement of using hickory to generate reagent style hiccup"
   :url "https://github.com/zjhmale/reagent-hickory"
   :license {:name "Eclipse Public License"
