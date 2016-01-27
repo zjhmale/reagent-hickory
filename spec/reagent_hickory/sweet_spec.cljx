@@ -1,9 +1,9 @@
 (ns reagent-hickory.sweet-spec
   #+clj (:require [speclj.core :refer :all]
-                  [reagent-hickory.templates :refer [deftemplate]])
+                  [reagent-hickory.templates :refer [deftemplate deftemplatefn]])
   #+cljs (:require-macros
            [speclj.core :refer [describe it should=]]
-           [reagent-hickory.templates :refer [deftemplate]])
+           [reagent-hickory.templates :refer [deftemplate deftemplatefn]])
   #+cljs (:require [speclj.core])
   (:use [reagent-hickory.sweet :only [html->hiccup]]))
 
@@ -11,6 +11,8 @@
 (deftemplate withcomments "withcomments.html")
 (deftemplate withheadcomment "withheadcomment.html")
 (deftemplate withheadcomments "withheadcomments.html")
+
+(deftemplatefn withheadcommentsfn "withheadcomments.html")
 
 (describe "test html -> hiccup"
   (it "html str -> hiccup"
@@ -125,4 +127,31 @@
                   ]
                  ]
                 ]
-               withheadcomments)))
+               withheadcomments)
+      (should= [:div {:id "navbar"}
+                [:ul {}
+                 [:li {}
+                  [:a {:href "/"} "dashboard"]
+                  ]
+                 [:li {}
+                  [:a {:class "muted"} "robot (stage禁用)"]
+                  [:a {:href "/robot"} "robot"]
+                  ]
+                 [:li {}
+                  [:a {:href "/feedbacks"} "feedbacks"]
+                  ]
+                 [:li {}
+                  [:a {:href "/teams"} "teams"]
+                  ]
+                 [:li {}
+                  [:a {:href "/human_assistant"} "human assistant"]
+                  ]
+                 [:li {}
+                  [:a {:href "/features"} "features"]
+                  ]
+                 [:li {}
+                  [:a {:href "/refresh"} "refresh"]
+                  ]
+                 ]
+                ]
+               (withheadcommentsfn))))

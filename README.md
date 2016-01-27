@@ -15,7 +15,7 @@ an enhancement of using hickory to generate reagent style hiccup
 ## Usage
 
 ```clojure
-(:require-macros [reagent-hickory.templates :refer [deftemplate]])
+(:require-macros [reagent-hickory.templates :refer [deftemplate deftemplatefn]])
 (:require [reagent-hickory.sweet :refer [html->hiccup]])
 ```
 
@@ -33,6 +33,9 @@ put you html file in `src/templates/`
 ```clojure
 user=> (deftemplate component "component.html") ;;#'component can put in any reagent capatible hiccup structure
 user=> component
+[:p {:class "someclass"} [:span {} "I have "] [:strong {} "bold"] [:span {:style {"color" "red"}} " and red "] [:span {} "text."]]
+user=> (deftemplatefn componentfn "component.html")
+user=> (componentfn)
 [:p {:class "someclass"} [:span {} "I have "] [:strong {} "bold"] [:span {:style {"color" "red"}} " and red "] [:span {} "text."]]
 ```
 
